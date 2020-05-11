@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render an expense from the expense array 1`] = `
+<div>
+  <Link
+    to="/edit/1"
+  >
+    <h3>
+      lunch
+       
+    </h3>
+  </Link>
+  <p>
+     
+    0
+     ksh: 
+    10000
+     
+  </p>
+</div>
+`;
