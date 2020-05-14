@@ -11,11 +11,9 @@ exports[`Should render an expense from the expense array 1`] = `
     </h3>
   </Link>
   <p>
-     
-    0
-     ksh: 
-    10000
-     
+    $10,000.00
+    -
+    January 1st, 1970
   </p>
 </div>
 `;
