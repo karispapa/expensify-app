@@ -1,0 +1,14 @@
+creating a separate test database:
+ 1. Install cross-env - ensures setting env variables compatible on all operating systems
+ 2. setup development and test variables 
+
+
+ test database configs 
+
+ apiKey: "AIzaSyCj-tXJg9wGMM_cV2eMXcZOu3NwDLoZhAg",
+ authDomain: "expensify-test-20380.firebaseapp.com",
+ databaseURL: "https://expensify-test-20380.firebaseio.com",
+ projectId: "expensify-test-20380",
+ storageBucket: "expensify-test-20380.appspot.com",
+ messagingSenderId: "182107886937",
+ appId: "1:182107886937:web:e72f53259a311a37a5e848"
