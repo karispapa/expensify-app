@@ -1,5 +1,4 @@
 
-
 const expensesReducerDefault = [];
 
 // Expenses reducer
@@ -10,6 +9,9 @@ export default (state = expensesReducerDefault, action)=>{
 
     case 'ADD_EXPENSE':
       return [...state, action.expense]
+    
+    case 'SET_EXPENSES':
+     return action.expenses
 
     case 'REMOVE_EXPENSE':
       return state.filter(({id})=> action.id !== id) // filter returns all items in the array that pass the set criteria

@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+
 import  database  from '../firebase/firebase';
 
 
@@ -16,7 +16,7 @@ export const startAddExpense = (expenseData = {})=>{
     const {
       description = '',
       text = '',
-      amount =0,
+      amount = 0,
       createdAt = 0} = expenseData
 
     const expense = { description, text, amount, createdAt };
@@ -43,3 +43,31 @@ export const editExpense = (id, updates)=> ({
   id,
   updates
 });
+
+// fetch expense from redux 
+export const setExpenses = (expenses)=>({
+  type: 'SET_EXPENSES',
+  expenses
+});
+
+
+export const startSetExpenses = ()=>{
+  return (dispatch)=>{
+    const expenses = []
+    return database.ref('expenses').once('value')
+    .then((snapshot)=>{
+      snapshot.forEach((childSnapshot)=>{
+        expenses.push({
+          id: childSnapshot.key,
+          ...childSnapshot.val()
+        })
+      })
+    dispatch(setExpenses(expenses))
+
+    })
+  }
+}
+
+// fetch all the expenses data once 
+// parse the data into an array
+// dispatch setExpenses

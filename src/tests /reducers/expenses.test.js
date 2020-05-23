@@ -85,3 +85,13 @@ test('Shouldnt  edit an existing expense if id doesnt match', ()=> {
   expect(state).toEqual(expenses)
 
 })
+
+test('Should setup state with new expenses from the setExpenses', ()=>{
+  const action = {
+    type: 'SET_EXPENSES',
+    expenses: [expenses[2]]
+  }
+  const state = expensesReducer(expenses, action);
+  expect(state).toEqual([expenses[2]])
+
+})
