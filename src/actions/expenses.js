@@ -36,6 +36,19 @@ export const removeExpense = ({id} = {})=> ({
   type: 'REMOVE_EXPENSE',
   id
 });
+// integrate remove expense action with the database
+
+export const startRemoveExpense = ({id} = {})=>{
+  return dispatch => {
+    return database.ref(`expenses/${id}`).remove()
+    .then(()=>{
+      dispatch(removeExpense({id}))
+    })
+  }
+}
+
+
+
 //EDIT_EXPENSE
 // action generator for edit expense
 export const editExpense = (id, updates)=> ({
