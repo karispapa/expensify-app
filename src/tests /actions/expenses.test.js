@@ -19,14 +19,16 @@ beforeEach((done)=>{
 
 
 test('Should setup the edit expense object', ()=>{
-  const action = editExpense('12345', {amount: 23400, description: 'Edited Expense'})
+  const updates = {
+    amount: 23400, 
+    description: 'Edited Expense'
+  }
+  
+  const action = editExpense('12345', updates)
   expect(action).toEqual({
     type: 'EDIT_EXPENSE',
     id: '12345',
-    updates: {
-      amount: 23400,
-      description: 'Edited Expense'
-    }
+    updates
   })
 })
 
