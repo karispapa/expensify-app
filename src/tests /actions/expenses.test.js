@@ -12,8 +12,8 @@ const uid = "mytestsuiteid"
 const defaultAuthState = {auth: {uid}}
 beforeEach((done)=>{
   const expenseData = {};
-  expenses.forEach(({id, description, amount, createdAt, text})=>{
-    expenseData[id] = {description, amount, createdAt, text}
+  expenses.forEach(({id, description, amount, createdAt, note})=>{
+    expenseData[id] = {description, amount, createdAt, note}
   })
 
   database.ref(`users/${uid}/expenses`).set(expenseData).then(()=> done())
@@ -72,7 +72,7 @@ test('Should add expense to database and store', (done)=>{
 
   const expenseData = {
     description: 'coffee',
-    text: 'Black coffee',
+    note: 'Black coffee',
     amount: 30000,
     createdAt: 2000
   }
@@ -102,7 +102,7 @@ test('Should add expense with default values to database and store', (done)=>{
 
   const expenseDefaults = {
     description: '',
-    text: '',
+    note: '',
     amount: 0,
     createdAt: 0
   }

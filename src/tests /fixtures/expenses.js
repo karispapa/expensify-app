@@ -4,7 +4,7 @@ export default [
   {
     id: '1',
     description: 'lunch',
-    text: 'pilau',
+    note: 'pilau',
     amount: 10000,
     createdAt: 0
   },
@@ -12,7 +12,7 @@ export default [
   {
     id: '2',
     description: 'Rent',
-    text: 'March',
+    note: 'March',
     amount: 100000,
     createdAt: moment(0).subtract(3, 'days').valueOf()
   },
@@ -20,7 +20,7 @@ export default [
   {
     id: '3',
     description: 'Coffee',
-    text: 'Coffee',
+    note: 'Coffee',
     amount: 5000,
     createdAt: moment(0).add(3, 'days').valueOf()
   }
